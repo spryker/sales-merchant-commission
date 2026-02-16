@@ -12,9 +12,9 @@ use Generated\Shared\Transfer\SalesMerchantCommissionCollectionTransfer;
 interface SalesMerchantCommissionReaderInterface
 {
     /**
-     * @param list<int> $salesOrderItemIds
+     * @param array<int> $salesOrderItemIds
      *
-     * @return list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
      */
     public function getSalesMerchantCommissionsBySalesOrderItemIds(array $salesOrderItemIds): array;
 

@@ -29,9 +29,9 @@ class SalesMerchantCommissionUpdater implements SalesMerchantCommissionUpdaterIn
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
+     * @param array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
      *
-     * @return list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
      */
     public function updateSalesMerchantCommissions(array $salesMerchantCommissionTransfers): array
     {
@@ -41,9 +41,9 @@ class SalesMerchantCommissionUpdater implements SalesMerchantCommissionUpdaterIn
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
+     * @param array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
      *
-     * @return list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
      */
     protected function executeUpdateSalesMerchantCommissionsTransaction(array $salesMerchantCommissionTransfers): array
     {

@@ -13,7 +13,7 @@ interface MerchantCommissionRefunderInterface
 {
     /**
      * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param list<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
      *
      * @return \Generated\Shared\Transfer\OrderTransfer
      */

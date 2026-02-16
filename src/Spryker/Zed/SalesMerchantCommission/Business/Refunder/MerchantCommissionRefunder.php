@@ -39,7 +39,7 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
     protected SalesMerchantCommissionToSalesFacadeInterface $salesFacade;
 
     /**
-     * @var list<\Spryker\Zed\SalesMerchantCommissionExtension\Dependency\Plugin\PostRefundMerchantCommissionPluginInterface>
+     * @var array<\Spryker\Zed\SalesMerchantCommissionExtension\Dependency\Plugin\PostRefundMerchantCommissionPluginInterface>
      */
     protected array $postRefundMerchantCommissionPlugins;
 
@@ -48,7 +48,7 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
      * @param \Spryker\Zed\SalesMerchantCommission\Business\Updater\SalesMerchantCommissionUpdaterInterface $salesMerchantCommissionUpdater
      * @param \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToCalculationFacadeInterface $calculationFacade
      * @param \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface $salesFacade
-     * @param list<\Spryker\Zed\SalesMerchantCommissionExtension\Dependency\Plugin\PostRefundMerchantCommissionPluginInterface> $postRefundMerchantCommissionPlugins
+     * @param array<\Spryker\Zed\SalesMerchantCommissionExtension\Dependency\Plugin\PostRefundMerchantCommissionPluginInterface> $postRefundMerchantCommissionPlugins
      */
     public function __construct(
         SalesMerchantCommissionReaderInterface $salesMerchantCommissionReader,
@@ -66,7 +66,7 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
 
     /**
      * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param list<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
      *
      * @return \Generated\Shared\Transfer\OrderTransfer
      */
@@ -92,8 +92,8 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
 
     /**
      * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param list<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
-     * @param list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $refundableSalesMerchantCommissions
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
+     * @param array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $refundableSalesMerchantCommissions
      *
      * @return \Generated\Shared\Transfer\OrderTransfer
      */
@@ -116,10 +116,10 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
      * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
      *
-     * @return list<\Generated\Shared\Transfer\ItemTransfer>
+     * @return array<\Generated\Shared\Transfer\ItemTransfer>
      */
     protected function expandItemsAfterOrderRecalculation(array $itemTransfers, OrderTransfer $orderTransfer): array
     {
@@ -151,10 +151,10 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
     }
 
     /**
-     * @param list<int> $salesOrderItemIds
-     * @param list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
+     * @param array<int> $salesOrderItemIds
+     * @param array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
      *
-     * @return list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
      */
     protected function extractRefundableSalesMerchantCommissions(
         array $salesOrderItemIds,
@@ -171,9 +171,9 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
      *
-     * @return list<int>
+     * @return array<int>
      */
     protected function extractSalesOrderItemIds(array $itemTransfers): array
     {
@@ -187,7 +187,7 @@ class MerchantCommissionRefunder implements MerchantCommissionRefunderInterface
 
     /**
      * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param list<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $itemTransfers
      *
      * @return void
      */

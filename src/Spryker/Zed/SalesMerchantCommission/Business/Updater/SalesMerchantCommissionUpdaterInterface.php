@@ -10,9 +10,9 @@ namespace Spryker\Zed\SalesMerchantCommission\Business\Updater;
 interface SalesMerchantCommissionUpdaterInterface
 {
     /**
-     * @param list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
+     * @param array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer> $salesMerchantCommissionTransfers
      *
-     * @return list<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
+     * @return array<\Generated\Shared\Transfer\SalesMerchantCommissionTransfer>
      */
     public function updateSalesMerchantCommissions(array $salesMerchantCommissionTransfers): array;
 }
