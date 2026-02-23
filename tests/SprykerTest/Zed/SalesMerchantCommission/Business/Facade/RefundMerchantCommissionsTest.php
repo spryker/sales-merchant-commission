@@ -16,7 +16,6 @@ use Generated\Shared\Transfer\SaveOrderTransfer;
 use Generated\Shared\Transfer\TotalsTransfer;
 use Spryker\Shared\Kernel\Transfer\Exception\NullValueException;
 use Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToCalculationFacadeInterface;
-use Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeBridge;
 use Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface;
 use Spryker\Zed\SalesMerchantCommission\SalesMerchantCommissionDependencyProvider;
 use Spryker\Zed\SalesMerchantCommissionExtension\Dependency\Plugin\PostRefundMerchantCommissionPluginInterface;
@@ -378,8 +377,7 @@ class RefundMerchantCommissionsTest extends Unit
      */
     protected function createSalesFacadeMock(): SalesMerchantCommissionToSalesFacadeInterface
     {
-        $salesFacadeMock = $this->getMockBuilder(SalesMerchantCommissionToSalesFacadeBridge::class)
-            ->enableProxyingToOriginalMethods()
+        $salesFacadeMock = $this->getMockBuilder(SalesMerchantCommissionToSalesFacadeInterface::class)
             ->setConstructorArgs([$this->tester->getLocator()->sales()->facade()])
             ->getMock();
 
