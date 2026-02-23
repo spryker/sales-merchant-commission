@@ -269,7 +269,7 @@ class CreateSalesMerchantCommissionsTest extends Unit
     protected function createSalesFacadeMock(): SalesMerchantCommissionToSalesFacadeInterface
     {
         $salesFacadeMock = $this->getMockBuilder(SalesMerchantCommissionToSalesFacadeBridge::class)
-            ->enableProxyingToOriginalMethods()
+            ->onlyMethods(['updateOrder'])
             ->setConstructorArgs([$this->tester->getLocator()->sales()->facade()])
             ->getMock();
 
