@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface SalesMerchantCommissionCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function createSalesMerchantCommissions(OrderTransfer $orderTransfer): void;
 }

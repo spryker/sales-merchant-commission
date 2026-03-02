@@ -40,9 +40,6 @@ use Spryker\Zed\SalesMerchantCommission\SalesMerchantCommissionDependencyProvide
  */
 class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Creator\SalesMerchantCommissionCreatorInterface
-     */
     public function createSalesMerchantCommissionCreator(): SalesMerchantCommissionCreatorInterface
     {
         return new SalesMerchantCommissionCreator(
@@ -54,17 +51,11 @@ class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Mapper\MerchantCommissionMapperInterface
-     */
     public function createMerchantCommissionMapper(): MerchantCommissionMapperInterface
     {
         return new MerchantCommissionMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Updater\OrderUpdaterInterface
-     */
     public function createOrderUpdater(): OrderUpdaterInterface
     {
         return new OrderUpdater(
@@ -73,17 +64,11 @@ class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Expander\OrderExpanderInterface
-     */
     public function createOrderExpander(): OrderExpanderInterface
     {
         return new OrderExpander();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Calculator\MerchantCommissionCalculatorInterface
-     */
     public function createMerchantCommissionCalculator(): MerchantCommissionCalculatorInterface
     {
         return new MerchantCommissionCalculator(
@@ -92,9 +77,6 @@ class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Refunder\MerchantCommissionRefunderInterface
-     */
     public function createMerchantCommissionRefunder(): MerchantCommissionRefunderInterface
     {
         return new MerchantCommissionRefunder(
@@ -106,9 +88,6 @@ class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Updater\SalesMerchantCommissionUpdaterInterface
-     */
     public function createSalesMerchantCommissionUpdater(): SalesMerchantCommissionUpdaterInterface
     {
         return new SalesMerchantCommissionUpdater(
@@ -116,9 +95,6 @@ class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Reader\SalesMerchantCommissionReaderInterface
-     */
     public function createSalesMerchantCommissionReader(): SalesMerchantCommissionReaderInterface
     {
         return new SalesMerchantCommissionReader(
@@ -126,41 +102,26 @@ class SalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Sanitizer\MerchantCommissionQuoteSanitizerInterface
-     */
     public function createMerchantCommissionQuoteSanitizer(): MerchantCommissionQuoteSanitizerInterface
     {
         return new MerchantCommissionQuoteSanitizer();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Business\Collector\MerchantCommissionCollectorInterface
-     */
     public function createMerchantCommissionCollector(): MerchantCommissionCollectorInterface
     {
         return new MerchantCommissionCollector();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToMerchantCommissionFacadeInterface
-     */
     public function getMerchantCommissionFacade(): SalesMerchantCommissionToMerchantCommissionFacadeInterface
     {
         return $this->getProvidedDependency(SalesMerchantCommissionDependencyProvider::FACADE_MERCHANT_COMMISSION);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface
-     */
     public function getSalesFacade(): SalesMerchantCommissionToSalesFacadeInterface
     {
         return $this->getProvidedDependency(SalesMerchantCommissionDependencyProvider::FACADE_SALES);
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToCalculationFacadeInterface
-     */
     public function getCalculationFacade(): SalesMerchantCommissionToCalculationFacadeInterface
     {
         return $this->getProvidedDependency(SalesMerchantCommissionDependencyProvider::FACADE_CALCULATION);

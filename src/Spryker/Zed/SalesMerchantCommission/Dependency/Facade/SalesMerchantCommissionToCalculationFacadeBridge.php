@@ -24,11 +24,6 @@ class SalesMerchantCommissionToCalculationFacadeBridge implements SalesMerchantC
         $this->calculationFacade = $calculationFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function recalculateOrder(OrderTransfer $orderTransfer): OrderTransfer
     {
         return $this->calculationFacade->recalculateOrder($orderTransfer);

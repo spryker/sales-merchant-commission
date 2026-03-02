@@ -24,22 +24,11 @@ class SalesMerchantCommissionToSalesFacadeBridge implements SalesMerchantCommiss
         $this->salesFacade = $salesFacade;
     }
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer|null
-     */
     public function findOrderByIdSalesOrder(int $idSalesOrder): ?OrderTransfer
     {
         return $this->salesFacade->findOrderByIdSalesOrder($idSalesOrder);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param int $idSalesOrder
-     *
-     * @return bool
-     */
     public function updateOrder(OrderTransfer $orderTransfer, int $idSalesOrder): bool
     {
         return $this->salesFacade->updateOrder($orderTransfer, $idSalesOrder);

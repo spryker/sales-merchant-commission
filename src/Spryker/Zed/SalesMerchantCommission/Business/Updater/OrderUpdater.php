@@ -24,10 +24,6 @@ class OrderUpdater implements OrderUpdaterInterface
      */
     protected OrderExpanderInterface $orderExpander;
 
-    /**
-     * @param \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface $salesFacade
-     * @param \Spryker\Zed\SalesMerchantCommission\Business\Expander\OrderExpanderInterface $orderExpander
-     */
     public function __construct(
         SalesMerchantCommissionToSalesFacadeInterface $salesFacade,
         OrderExpanderInterface $orderExpander
@@ -36,12 +32,6 @@ class OrderUpdater implements OrderUpdaterInterface
         $this->orderExpander = $orderExpander;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function updateOrderItemsWithTotals(
         OrderTransfer $orderTransfer,
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer

@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class SalesMerchantCommissionEntityManager extends AbstractEntityManager implements SalesMerchantCommissionEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionTransfer
-     */
     public function createSalesMerchantCommission(
         SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
     ): SalesMerchantCommissionTransfer {
@@ -38,11 +33,6 @@ class SalesMerchantCommissionEntityManager extends AbstractEntityManager impleme
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionTransfer
-     */
     public function updateSalesMerchantCommission(
         SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
     ): SalesMerchantCommissionTransfer {

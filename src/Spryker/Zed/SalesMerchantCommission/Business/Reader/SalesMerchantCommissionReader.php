@@ -19,9 +19,6 @@ class SalesMerchantCommissionReader implements SalesMerchantCommissionReaderInte
      */
     protected SalesMerchantCommissionRepositoryInterface $salesMerchantCommissionRepository;
 
-    /**
-     * @param \Spryker\Zed\SalesMerchantCommission\Persistence\SalesMerchantCommissionRepositoryInterface $salesMerchantCommissionRepository
-     */
     public function __construct(
         SalesMerchantCommissionRepositoryInterface $salesMerchantCommissionRepository
     ) {
@@ -47,11 +44,6 @@ class SalesMerchantCommissionReader implements SalesMerchantCommissionReaderInte
             ->getArrayCopy();
     }
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionCollectionTransfer
-     */
     public function getSalesMerchantCommissionsByIdSalesOrder(int $idSalesOrder): SalesMerchantCommissionCollectionTransfer
     {
         $salesMerchantCommissionConditionsTransfer = (new SalesMerchantCommissionConditionsTransfer())

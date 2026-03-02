@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\SalesMerchantCommissionCriteriaTransfer;
 
 interface SalesMerchantCommissionRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionCriteriaTransfer $salesMerchantCommissionCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionCollectionTransfer
-     */
     public function getSalesMerchantCommissionCollection(
         SalesMerchantCommissionCriteriaTransfer $salesMerchantCommissionCriteriaTransfer
     ): SalesMerchantCommissionCollectionTransfer;

@@ -38,11 +38,6 @@ class SalesMerchantCommissionDependencyProvider extends AbstractBundleDependency
      */
     public const PLUGINS_POST_REFUND_MERCHANT_COMMISSION = 'PLUGINS_POST_REFUND_MERCHANT_COMMISSION';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -54,11 +49,6 @@ class SalesMerchantCommissionDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantCommissionFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_COMMISSION, function (Container $container) {
@@ -70,11 +60,6 @@ class SalesMerchantCommissionDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesFacade(Container $container): Container
     {
         $container->set(static::FACADE_SALES, function (Container $container) {
@@ -86,11 +71,6 @@ class SalesMerchantCommissionDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCalculationFacade(Container $container): Container
     {
         $container->set(static::FACADE_CALCULATION, function (Container $container) {
@@ -102,11 +82,6 @@ class SalesMerchantCommissionDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPostRefundMerchantCommissionPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_POST_REFUND_MERCHANT_COMMISSION, function () {

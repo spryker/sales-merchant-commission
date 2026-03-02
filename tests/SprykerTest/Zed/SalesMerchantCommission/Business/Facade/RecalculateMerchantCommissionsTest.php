@@ -48,9 +48,6 @@ class RecalculateMerchantCommissionsTest extends Unit
      */
     protected SalesMerchantCommissionBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class RecalculateMerchantCommissionsTest extends Unit
         $this->tester->ensureSalesMerchantCommissionDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRecalculateMerchantCommissionInOrderTotals(): void
     {
         // Arrange
@@ -83,9 +77,6 @@ class RecalculateMerchantCommissionsTest extends Unit
         $this->assertSame(150, $totalsTransfer->getMerchantCommissionRefundedTotal());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRecalculateMerchantCommissionInOrderItems(): void
     {
         // Arrange
@@ -109,9 +100,6 @@ class RecalculateMerchantCommissionsTest extends Unit
         $this->assertSame(0, $itemTransfer->getMerchantCommissionRefundedAmount());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotRecalculateMerchantCommissionWhenOriginalOrderIsNull(): void
     {
         // Arrange
@@ -130,9 +118,6 @@ class RecalculateMerchantCommissionsTest extends Unit
         $this->assertEmptyCommissionValues($calculableObjectTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotRecalculateMerchantCommissionWhenOriginalOrderIdIsNull(): void
     {
         // Arrange
@@ -151,9 +136,6 @@ class RecalculateMerchantCommissionsTest extends Unit
         $this->assertEmptyCommissionValues($calculableObjectTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotRecalculateMerchantCommissionWhenSalesMerchantCommissionsAbsent(): void
     {
         // Arrange
@@ -171,11 +153,6 @@ class RecalculateMerchantCommissionsTest extends Unit
         $this->assertEmptyCommissionValues($calculableObjectTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CalculableObjectTransfer $calculableObjectTransfer
-     *
-     * @return void
-     */
     protected function assertEmptyCommissionValues(CalculableObjectTransfer $calculableObjectTransfer): void
     {
         $totalsTransfer = $calculableObjectTransfer->getTotals();

@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer;
 
 interface SalesMerchantCommissionToMerchantCommissionFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer
-     */
     public function calculateMerchantCommission(
         MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer
     ): MerchantCommissionCalculationResponseTransfer;

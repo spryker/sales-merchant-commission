@@ -18,10 +18,5 @@ interface SalesMerchantCommissionReaderInterface
      */
     public function getSalesMerchantCommissionsBySalesOrderItemIds(array $salesOrderItemIds): array;
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionCollectionTransfer
-     */
     public function getSalesMerchantCommissionsByIdSalesOrder(int $idSalesOrder): SalesMerchantCommissionCollectionTransfer;
 }

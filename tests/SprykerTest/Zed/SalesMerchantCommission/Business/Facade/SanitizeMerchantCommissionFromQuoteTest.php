@@ -36,9 +36,6 @@ class SanitizeMerchantCommissionFromQuoteTest extends Unit
      */
     protected SalesMerchantCommissionBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldSanitizeMerchantCommissionsFromQuote(): void
     {
         // Arrange
@@ -51,11 +48,6 @@ class SanitizeMerchantCommissionFromQuoteTest extends Unit
         $this->assertEmptyMerchantCommissionAmounts($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function assertEmptyMerchantCommissionAmounts(QuoteTransfer $quoteTransfer): void
     {
         foreach ($quoteTransfer->getItems() as $itemTransfer) {
@@ -70,9 +62,6 @@ class SanitizeMerchantCommissionFromQuoteTest extends Unit
         $this->assertNull($totalsTransfer->getMerchantCommissionRefundedTotal());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function createQuoteWithMerchantCommissions(): QuoteTransfer
     {
         $itemTransfer1 = (new ItemTransfer())

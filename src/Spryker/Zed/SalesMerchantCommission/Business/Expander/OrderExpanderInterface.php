@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface OrderExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function expandOrderWithMerchantCommissions(
         OrderTransfer $orderTransfer,
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer

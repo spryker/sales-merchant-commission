@@ -25,11 +25,6 @@ class SalesMerchantCommissionToMerchantCommissionFacadeBridge implements SalesMe
         $this->merchantCommissionFacade = $merchantCommissionFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer
-     */
     public function calculateMerchantCommission(
         MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer
     ): MerchantCommissionCalculationResponseTransfer {

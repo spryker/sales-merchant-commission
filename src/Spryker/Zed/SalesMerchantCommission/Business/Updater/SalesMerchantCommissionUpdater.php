@@ -19,9 +19,6 @@ class SalesMerchantCommissionUpdater implements SalesMerchantCommissionUpdaterIn
      */
     protected SalesMerchantCommissionEntityManagerInterface $salesMerchantCommissionEntityManager;
 
-    /**
-     * @param \Spryker\Zed\SalesMerchantCommission\Persistence\SalesMerchantCommissionEntityManagerInterface $salesMerchantCommissionEntityManager
-     */
     public function __construct(
         SalesMerchantCommissionEntityManagerInterface $salesMerchantCommissionEntityManager
     ) {

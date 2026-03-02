@@ -14,12 +14,6 @@ use Propel\Runtime\Collection\Collection;
 
 class SalesMerchantCommissionMapper
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
-     * @param \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommission $salesMerchantCommissionEntity
-     *
-     * @return \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommission
-     */
     public function mapSalesMerchantCommissionTransferToSalesMerchantCommissionEntity(
         SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer,
         SpySalesMerchantCommission $salesMerchantCommissionEntity
@@ -57,12 +51,6 @@ class SalesMerchantCommissionMapper
         return $salesMerchantCommissionCollectionTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommission $salesMerchantCommissionEntity
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionTransfer
-     */
     public function mapSalesMerchantCommissionEntityToSalesMerchantCommissionTransfer(
         SpySalesMerchantCommission $salesMerchantCommissionEntity,
         SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer

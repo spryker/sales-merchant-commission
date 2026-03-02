@@ -11,20 +11,10 @@ use Generated\Shared\Transfer\SalesMerchantCommissionTransfer;
 
 interface SalesMerchantCommissionEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionTransfer
-     */
     public function createSalesMerchantCommission(
         SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
     ): SalesMerchantCommissionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionTransfer
-     */
     public function updateSalesMerchantCommission(
         SalesMerchantCommissionTransfer $salesMerchantCommissionTransfer
     ): SalesMerchantCommissionTransfer;

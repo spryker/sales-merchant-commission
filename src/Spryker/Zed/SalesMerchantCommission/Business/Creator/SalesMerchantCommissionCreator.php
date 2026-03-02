@@ -46,13 +46,6 @@ class SalesMerchantCommissionCreator implements SalesMerchantCommissionCreatorIn
      */
     protected MerchantCommissionMapperInterface $merchantCommissionMapper;
 
-    /**
-     * @param \Spryker\Zed\SalesMerchantCommission\Persistence\SalesMerchantCommissionEntityManagerInterface $salesMerchantCommissionEntityManager
-     * @param \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToMerchantCommissionFacadeInterface $merchantCommissionFacade
-     * @param \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface $salesFacade
-     * @param \Spryker\Zed\SalesMerchantCommission\Business\Updater\OrderUpdaterInterface $orderUpdater
-     * @param \Spryker\Zed\SalesMerchantCommission\Business\Mapper\MerchantCommissionMapperInterface $merchantCommissionMapper
-     */
     public function __construct(
         SalesMerchantCommissionEntityManagerInterface $salesMerchantCommissionEntityManager,
         SalesMerchantCommissionToMerchantCommissionFacadeInterface $merchantCommissionFacade,
@@ -67,11 +60,6 @@ class SalesMerchantCommissionCreator implements SalesMerchantCommissionCreatorIn
         $this->merchantCommissionMapper = $merchantCommissionMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return void
-     */
     public function createSalesMerchantCommissions(OrderTransfer $orderTransfer): void
     {
         $persistedOrderTransfer = $this->salesFacade->findOrderByIdSalesOrder($orderTransfer->getIdSalesOrderOrFail());
@@ -96,12 +84,6 @@ class SalesMerchantCommissionCreator implements SalesMerchantCommissionCreatorIn
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return void
-     */
     protected function executeCreateSalesMerchantCommissionsTransaction(
         OrderTransfer $orderTransfer,
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer

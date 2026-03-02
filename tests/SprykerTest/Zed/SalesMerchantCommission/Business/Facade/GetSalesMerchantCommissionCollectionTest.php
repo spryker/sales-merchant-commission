@@ -38,9 +38,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
      */
     protected SalesMerchantCommissionBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -49,9 +46,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         $this->tester->ensureSalesMerchantCommissionDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRetrieveSalesMerchantCommissionsFilteredByIdSalesOrderItem(): void
     {
         // Arrange
@@ -77,9 +71,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRetrieveSeveralSalesMerchantCommissionsFilteredByIdSalesOrderItem(): void
     {
         // Arrange
@@ -99,9 +90,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         $this->assertCount(2, $salesMerchantCommissionCollectionTransfer->getSalesMerchantCommissions());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRetrieveSeveralSalesMerchantCommissionsFilteredByIdSalesOrder(): void
     {
         // Arrange
@@ -121,9 +109,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         $this->assertCount(2, $salesMerchantCommissionCollectionTransfer->getSalesMerchantCommissions());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReturnEmptyCollection(): void
     {
         // Act
@@ -135,9 +120,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         $this->assertCount(0, $salesMerchantCommissionCollectionTransfer->getSalesMerchantCommissions());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsSalesMerchantCommissionsByPagination(): void
     {
         // Arrange
@@ -174,9 +156,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         $this->assertSame(1, $paginationTransfer->getPreviousPageOrFail());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsSalesMerchantCommissionsSortedByFieldDesc(): void
     {
         // Arrange
@@ -204,9 +183,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         $this->assertSame('abc', $salesMerchantCommissionTransfers->getIterator()->offsetGet(2)->getName());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsSalesMerchantCommissionsSortedByFieldAsc(): void
     {
         // Arrange
@@ -264,12 +240,6 @@ class GetSalesMerchantCommissionCollectionTest extends Unit
         return $salesMerchantCommissions;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $persistedCommission
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionTransfer $commission
-     *
-     * @return void
-     */
     protected function assertSalesMerchantCommission(
         SalesMerchantCommissionTransfer $persistedCommission,
         SalesMerchantCommissionTransfer $commission

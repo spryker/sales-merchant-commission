@@ -54,9 +54,6 @@ class SalesMerchantCommissionBusinessTester extends Actor
      */
     protected const GROSS_MODE = 'GROSS_MODE';
 
-    /**
-     * @return void
-     */
     public function ensureSalesMerchantCommissionDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty(
@@ -72,41 +69,21 @@ class SalesMerchantCommissionBusinessTester extends Actor
         return $this->getSalesMerchantCommissionQuery()->find();
     }
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderTotals
-     */
     public function getSalesOrderTotalByIdSalesOrder(int $idSalesOrder): SpySalesOrderTotals
     {
         return $this->getSalesOrderTotalsQuery()->filterByFkSalesOrder($idSalesOrder)->find()->getLast();
     }
 
-    /**
-     * @param int $idSalesOrderItem
-     *
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItem
-     */
     public function getSalesOrderItemByIdSalesOrderItem(int $idSalesOrderItem): SpySalesOrderItem
     {
         return $this->getSalesOrderItemQuery()->filterByIdSalesOrderItem($idSalesOrderItem)->findOne();
     }
 
-    /**
-     * @param int $idSalesOrder
-     *
-     * @return \Propel\Runtime\Collection\Collection
-     */
     public function getSalesOrderItemByIdSalesOrder(int $idSalesOrder): Collection
     {
         return $this->getSalesOrderItemQuery()->filterByFkSalesOrder($idSalesOrder)->find();
     }
 
-    /**
-     * @param bool|null $withPriceMode
-     *
-     * @return \Generated\Shared\Transfer\SaveOrderTransfer
-     */
     public function createOrderWithItem(?bool $withPriceMode = false): SaveOrderTransfer
     {
         $quoteTransfer = (new QuoteBuilder())
@@ -124,11 +101,6 @@ class SalesMerchantCommissionBusinessTester extends Actor
         return $this->haveOrderFromQuote($quoteTransfer, static::DEFAULT_OMS_PROCESS_NAME);
     }
 
-    /**
-     * @param bool|null $withPriceMode
-     *
-     * @return \Generated\Shared\Transfer\SaveOrderTransfer
-     */
     public function createOrderWithTwoItems(?bool $withPriceMode = false): SaveOrderTransfer
     {
         $quoteTransfer = (new QuoteBuilder())
@@ -147,25 +119,16 @@ class SalesMerchantCommissionBusinessTester extends Actor
         return $this->haveOrderFromQuote($quoteTransfer, static::DEFAULT_OMS_PROCESS_NAME);
     }
 
-    /**
-     * @return \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommissionQuery
-     */
     public function getSalesMerchantCommissionQuery(): SpySalesMerchantCommissionQuery
     {
         return SpySalesMerchantCommissionQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderTotalsQuery
-     */
     protected function getSalesOrderTotalsQuery(): SpySalesOrderTotalsQuery
     {
         return SpySalesOrderTotalsQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Sales\Persistence\SpySalesOrderItemQuery
-     */
     protected function getSalesOrderItemQuery(): SpySalesOrderItemQuery
     {
         return SpySalesOrderItemQuery::create();

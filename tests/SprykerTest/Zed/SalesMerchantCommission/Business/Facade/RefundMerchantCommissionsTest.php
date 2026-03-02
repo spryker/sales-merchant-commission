@@ -54,9 +54,6 @@ class RefundMerchantCommissionsTest extends Unit
      */
     protected SalesMerchantCommissionBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -65,9 +62,6 @@ class RefundMerchantCommissionsTest extends Unit
         $this->tester->ensureSalesMerchantCommissionDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRefundMerchantCommissions(): void
     {
         // Arrange
@@ -91,9 +85,6 @@ class RefundMerchantCommissionsTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldRefundMerchantCommissionsForOneOrderItem(): void
     {
         // Arrange
@@ -111,9 +102,6 @@ class RefundMerchantCommissionsTest extends Unit
         $this->assertPartialRefundCommissionAmounts($saveOrderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateOrderItemCommissionAmounts(): void
     {
         // Arrange
@@ -151,9 +139,6 @@ class RefundMerchantCommissionsTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateOrderTotalsCommissionAmounts(): void
     {
         // Arrange
@@ -185,9 +170,6 @@ class RefundMerchantCommissionsTest extends Unit
         $this->assertSame($orderTransfer->getTotals()->getMerchantCommissionRefundedTotal(), $totalsEntity->getMerchantCommissionRefundedTotal());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionForRefundWithEmptyIdSalesOrderItem(): void
     {
         // Arrange
@@ -201,9 +183,6 @@ class RefundMerchantCommissionsTest extends Unit
         $this->tester->getFacade()->refundMerchantCommissions($orderTransfer, [$itemTransfer]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionForOrderWithEmptyIdSalesOrder(): void
     {
         // Arrange
@@ -217,9 +196,6 @@ class RefundMerchantCommissionsTest extends Unit
         $this->tester->getFacade()->refundMerchantCommissions($orderTransfer, [$itemTransfer]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldExecutesPostRefundMerchantCommissionPlugins(): void
     {
         // Arrange
@@ -246,9 +222,6 @@ class RefundMerchantCommissionsTest extends Unit
         );
     }
 
-    /**
-     * @return callable
-     */
     protected function createCallbackWithFakeOrderItemCommissions(): callable
     {
         return function (OrderTransfer $orderTransfer) {
@@ -264,9 +237,6 @@ class RefundMerchantCommissionsTest extends Unit
         };
     }
 
-    /**
-     * @return callable
-     */
     protected function createCallbackWithFakeOrderTotalsCommissions(): callable
     {
         return function (OrderTransfer $orderTransfer) {
@@ -278,11 +248,6 @@ class RefundMerchantCommissionsTest extends Unit
         };
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CalculableObjectTransfer $calculableObjectTransfer
-     *
-     * @return void
-     */
     protected function assertEmptyCommissionValues(CalculableObjectTransfer $calculableObjectTransfer): void
     {
         $totalsTransfer = $calculableObjectTransfer->getTotals();
@@ -328,11 +293,6 @@ class RefundMerchantCommissionsTest extends Unit
         return $salesMerchantCommissions;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\SaveOrderTransfer $saveOrderTransfer
-     *
-     * @return void
-     */
     protected function assertPartialRefundCommissionAmounts(SaveOrderTransfer $saveOrderTransfer): void
     {
         /** @var list<\Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommission> $salesMerchantCommissionEntities */
@@ -352,11 +312,6 @@ class RefundMerchantCommissionsTest extends Unit
         $this->assertSame($salesMerchantCommissionEntity->getAmount(), $salesMerchantCommissionEntity->getRefundedAmount());
     }
 
-    /**
-     * @param callable|null $callback
-     *
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToCalculationFacadeInterface
-     */
     protected function createCalculationFacadeMock(?callable $callback = null): SalesMerchantCommissionToCalculationFacadeInterface
     {
         $calculationFacadeMock = $this->getMockBuilder(SalesMerchantCommissionToCalculationFacadeInterface::class)
@@ -372,9 +327,6 @@ class RefundMerchantCommissionsTest extends Unit
         return $calculationFacadeMock;
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface
-     */
     protected function createSalesFacadeMock(): SalesMerchantCommissionToSalesFacadeInterface
     {
         $salesFacadeMock = $this->getMockBuilder(SalesMerchantCommissionToSalesFacadeInterface::class)

@@ -24,10 +24,6 @@ class MerchantCommissionCalculator implements MerchantCommissionCalculatorInterf
      */
     protected SalesMerchantCommissionReaderInterface $salesMerchantCommissionReader;
 
-    /**
-     * @param \Spryker\Zed\SalesMerchantCommission\Business\Collector\MerchantCommissionCollectorInterface $merchantCommissionCollector
-     * @param \Spryker\Zed\SalesMerchantCommission\Business\Reader\SalesMerchantCommissionReaderInterface $salesMerchantCommissionReader
-     */
     public function __construct(
         MerchantCommissionCollectorInterface $merchantCommissionCollector,
         SalesMerchantCommissionReaderInterface $salesMerchantCommissionReader
@@ -36,11 +32,6 @@ class MerchantCommissionCalculator implements MerchantCommissionCalculatorInterf
         $this->salesMerchantCommissionReader = $salesMerchantCommissionReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CalculableObjectTransfer $calculableObjectTransfer
-     *
-     * @return \Generated\Shared\Transfer\CalculableObjectTransfer
-     */
     public function recalculateMerchantCommissions(
         CalculableObjectTransfer $calculableObjectTransfer
     ): CalculableObjectTransfer {

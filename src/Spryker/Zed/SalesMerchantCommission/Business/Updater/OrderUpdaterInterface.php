@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface OrderUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function updateOrderItemsWithTotals(
         OrderTransfer $orderTransfer,
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer

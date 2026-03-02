@@ -41,11 +41,6 @@ class SalesMerchantCommissionHelper extends Module
         return $salesMerchantCommissionTransfer;
     }
 
-    /**
-     * @param int $idSalesMerchantCommission
-     *
-     * @return void
-     */
     protected function deleteSalesMerchantCommission(int $idSalesMerchantCommission): void
     {
         $salesMerchantCommissionEntity = $this->getSalesMerchantCommissionQuery()
@@ -56,9 +51,6 @@ class SalesMerchantCommissionHelper extends Module
         }
     }
 
-    /**
-     * @return \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommissionQuery
-     */
     protected function getSalesMerchantCommissionQuery(): SpySalesMerchantCommissionQuery
     {
         return SpySalesMerchantCommissionQuery::create();

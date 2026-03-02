@@ -16,12 +16,6 @@ use Generated\Shared\Transfer\StoreTransfer;
 
 class MerchantCommissionMapper implements MerchantCommissionMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCalculationRequestTransfer
-     */
     public function mapOrderTransferToMerchantCommissionCalculationRequestTransfer(
         OrderTransfer $orderTransfer,
         MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer

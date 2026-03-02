@@ -57,9 +57,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
      */
     protected SalesMerchantCommissionBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -68,9 +65,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->tester->ensureSalesMerchantCommissionDatabaseTableIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotCreateSalesMerchantCommissionsForNotPersistedOrder(): void
     {
         // Arrange
@@ -84,9 +78,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->assertCount(0, $this->tester->getSalesMerchantCommissions());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionForOrderWithEmptyIdSalesOrder(): void
     {
         // Arrange
@@ -100,9 +91,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->tester->getFacade()->createSalesMerchantCommissions($orderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionForOrderWithEmptyPriceMode(): void
     {
         // Arrange
@@ -117,9 +105,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->tester->getFacade()->createSalesMerchantCommissions($orderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldPersistSalesMerchantCommission(): void
     {
         // Arrange
@@ -140,9 +125,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->assertSalesMerchantCommission($idSalesOrder, $idSalesOrderItem);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateOrderTotals(): void
     {
         // Arrange
@@ -192,12 +174,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->assertSame(static::FAKE_COMMISSION_AMOUNT, $salesOrderItemEntity->getMerchantCommissionAmountFullAggregation());
     }
 
-    /**
-     * @param int $idSalesOrder
-     * @param int $idSalesOrderItem
-     *
-     * @return void
-     */
     protected function assertSalesMerchantCommission(int $idSalesOrder, int $idSalesOrderItem): void
     {
         /** @var \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommission $salesMerchantCommissionEntity */
@@ -214,12 +190,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         $this->assertNotEmpty($salesMerchantCommissionEntity->getUpdatedAt());
     }
 
-    /**
-     * @param int $idSalesOrder
-     * @param int $idSalesOrderItem
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer
-     */
     protected function buildFakeCommissionCalculationResponse(
         int $idSalesOrder,
         int $idSalesOrderItem
@@ -244,11 +214,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToMerchantCommissionFacadeInterface
-     */
     protected function createMerchantCommissionFacadeMock(
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
     ): SalesMerchantCommissionToMerchantCommissionFacadeInterface {
@@ -263,9 +228,6 @@ class CreateSalesMerchantCommissionsTest extends Unit
         return $merchantCommissionFacadeMock;
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Dependency\Facade\SalesMerchantCommissionToSalesFacadeInterface
-     */
     protected function createSalesFacadeMock(): SalesMerchantCommissionToSalesFacadeInterface
     {
         $salesFacadeMock = $this->getMockBuilder(SalesMerchantCommissionToSalesFacadeBridge::class)

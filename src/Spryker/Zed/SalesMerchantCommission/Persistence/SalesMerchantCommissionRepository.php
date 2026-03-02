@@ -21,11 +21,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class SalesMerchantCommissionRepository extends AbstractRepository implements SalesMerchantCommissionRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionCriteriaTransfer $salesMerchantCommissionCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\SalesMerchantCommissionCollectionTransfer
-     */
     public function getSalesMerchantCommissionCollection(
         SalesMerchantCommissionCriteriaTransfer $salesMerchantCommissionCriteriaTransfer
     ): SalesMerchantCommissionCollectionTransfer {
@@ -57,12 +52,6 @@ class SalesMerchantCommissionRepository extends AbstractRepository implements Sa
             );
     }
 
-    /**
-     * @param \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommissionQuery $salesMerchantCommissionQuery
-     * @param \Generated\Shared\Transfer\SalesMerchantCommissionCriteriaTransfer $salesMerchantCommissionCriteriaTransfer
-     *
-     * @return \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommissionQuery
-     */
     protected function applySalesMerchantCommissionFilters(
         SpySalesMerchantCommissionQuery $salesMerchantCommissionQuery,
         SalesMerchantCommissionCriteriaTransfer $salesMerchantCommissionCriteriaTransfer
@@ -84,12 +73,6 @@ class SalesMerchantCommissionRepository extends AbstractRepository implements Sa
         return $salesMerchantCommissionQuery;
     }
 
-    /**
-     * @param \Propel\Runtime\ActiveQuery\ModelCriteria $modelCriteria
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function applyPagination(
         ModelCriteria $modelCriteria,
         PaginationTransfer $paginationTransfer

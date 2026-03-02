@@ -18,17 +18,11 @@ use Spryker\Zed\SalesMerchantCommission\Persistence\Propel\Mapper\SalesMerchantC
  */
 class SalesMerchantCommissionPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\SalesMerchantCommission\Persistence\SpySalesMerchantCommissionQuery
-     */
     public function getSalesMerchantCommissionQuery(): SpySalesMerchantCommissionQuery
     {
         return SpySalesMerchantCommissionQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\SalesMerchantCommission\Persistence\Propel\Mapper\SalesMerchantCommissionMapper
-     */
     public function createSalesMerchantCommissionMapper(): SalesMerchantCommissionMapper
     {
         return new SalesMerchantCommissionMapper();

@@ -16,12 +16,6 @@ use Generated\Shared\Transfer\TotalsTransfer;
 
 class OrderExpander implements OrderExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function expandOrderWithMerchantCommissions(
         OrderTransfer $orderTransfer,
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
@@ -74,12 +68,6 @@ class OrderExpander implements OrderExpanderInterface
         return $expandedItemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationItemTransfer $merchantCommissionCalculationItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function expandOrderItemWithMerchantCommissions(
         ItemTransfer $itemTransfer,
         MerchantCommissionCalculationItemTransfer $merchantCommissionCalculationItemTransfer
@@ -89,12 +77,6 @@ class OrderExpander implements OrderExpanderInterface
             ->setMerchantCommissionAmountFullAggregation($merchantCommissionCalculationItemTransfer->getMerchantCommissionAmountFullAggregationOrFail());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\TotalsTransfer $totalsTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\TotalsTransfer
-     */
     protected function expandOrderTotalsWithMerchantCommissions(
         TotalsTransfer $totalsTransfer,
         MerchantCommissionCalculationResponseTransfer $merchantCommissionCalculationResponseTransfer
